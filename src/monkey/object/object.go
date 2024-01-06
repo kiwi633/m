@@ -128,12 +128,12 @@ func (s *String) HashKey() HashKey {
 	return HashKey{Type: s.Type(), Value: h.Sum64()}
 }
 
-type Builtin struct {
+type B struct {
 	Fn BuiltinFunction
 }
 
-func (b *Builtin) Type() ObjectType { return BUILTIN_OBJ }
-func (b *Builtin) Inspect() string  { return "builtin function" }
+func (b *B) Type() ObjectType { return BUILTIN_OBJ }
+func (b *B) Inspect() string  { return "builtin function" }
 
 type Array struct {
 	Elements []Object

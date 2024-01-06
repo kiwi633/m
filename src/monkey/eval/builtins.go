@@ -5,8 +5,8 @@ import (
 	"m/object"
 )
 
-var builtins = map[string]*object.Builtin{
-	"len": &object.Builtin{Fn: func(args ...object.Object) object.Object {
+var builtins = map[string]*object.B{
+	"len": &object.B{Fn: func(args ...object.Object) object.Object {
 		if len(args) != 1 {
 			return newError("params error. get=%d, expect=1",
 				len(args))
@@ -23,7 +23,7 @@ var builtins = map[string]*object.Builtin{
 		}
 	},
 	},
-	"puts": &object.Builtin{
+	"puts": &object.B{
 		Fn: func(args ...object.Object) object.Object {
 			for _, arg := range args {
 				fmt.Println(arg.Inspect())
@@ -32,7 +32,7 @@ var builtins = map[string]*object.Builtin{
 			return NULL
 		},
 	},
-	"first": &object.Builtin{
+	"first": &object.B{
 		Fn: func(args ...object.Object) object.Object {
 			if len(args) != 1 {
 				return newError("params error. get=%d, expect=1",
@@ -51,7 +51,7 @@ var builtins = map[string]*object.Builtin{
 			return NULL
 		},
 	},
-	"last": &object.Builtin{
+	"last": &object.B{
 		Fn: func(args ...object.Object) object.Object {
 			if len(args) != 1 {
 				return newError("params error. get=%d, expect=1",
@@ -71,7 +71,7 @@ var builtins = map[string]*object.Builtin{
 			return NULL
 		},
 	},
-	"rest": &object.Builtin{
+	"rest": &object.B{
 		Fn: func(args ...object.Object) object.Object {
 			if len(args) != 1 {
 				return newError("params error. get=%d, expect=1",
@@ -93,7 +93,7 @@ var builtins = map[string]*object.Builtin{
 			return NULL
 		},
 	},
-	"push": &object.Builtin{
+	"push": &object.B{
 		Fn: func(args ...object.Object) object.Object {
 			if len(args) != 2 {
 				return newError("params error. get=%d, expect=2",

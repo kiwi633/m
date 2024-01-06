@@ -22,7 +22,7 @@ func Eval(node ast.Node, env *object.Envir) object.Object {
 	case *ast.BlockStatement:
 		return blockStatement(node, env)
 
-	case *ast.ESSSSSSSSS:
+	case *ast.StatementFromExpression:
 		return Eval(node.Expression, env)
 
 	case *ast.ReturnStatement:
