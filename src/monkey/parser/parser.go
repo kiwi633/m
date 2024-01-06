@@ -155,8 +155,8 @@ func (p *Parser) parseStatement() ast.Statement {
 	}
 }
 
-func (p *Parser) parseLetStatement() *ast.LetStatement {
-	stmt := &ast.LetStatement{Token: p.curToken}
+func (p *Parser) parseLetStatement() *ast.VariableDeclaration {
+	stmt := &ast.VariableDeclaration{Token: p.curToken}
 
 	if !p.expectPeek(token.IDENT) {
 		return nil
@@ -179,8 +179,8 @@ func (p *Parser) parseLetStatement() *ast.LetStatement {
 	return stmt
 }
 
-func (p *Parser) parseVarStatement() *ast.LetStatement {
-	stmt := &ast.LetStatement{Token: p.curToken}
+func (p *Parser) parseVarStatement() *ast.VariableDeclaration {
+	stmt := &ast.VariableDeclaration{Token: p.curToken}
 
 	if !p.expectPeek(token.IDENT) {
 		return nil
@@ -217,8 +217,8 @@ func (p *Parser) parseReturnStatement() *ast.ReturnStatement {
 	return stmt
 }
 
-func (p *Parser) parseExpressionStatement() *ast.ESSSSSSSSS {
-	stmt := &ast.ESSSSSSSSS{Token: p.curToken}
+func (p *Parser) parseExpressionStatement() *ast.StatementFromExpression {
+	stmt := &ast.StatementFromExpression{Token: p.curToken}
 
 	stmt.Expression = p.parseExpression(LOWEST)
 

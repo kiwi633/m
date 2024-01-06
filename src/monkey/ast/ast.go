@@ -43,23 +43,25 @@ func (p *Program) String() string {
 	return out.String()
 }
 
-type LetStatement struct {
+type VariableDeclaration struct {
 	Token token.Token // the token.LET token
 	Name  *Identifier
 	Value Expression
 }
 
-func (letStatement *LetStatement) statementNode()       {}
-func (letStatement *LetStatement) TokenLiteral() string { return letStatement.Token.Literal }
-func (letStatement *LetStatement) String() string {
+func (variableDeclaration *VariableDeclaration) statementNode() {}
+func (variableDeclaration *VariableDeclaration) TokenLiteral() string {
+	return variableDeclaration.Token.Literal
+}
+func (variableDeclaration *VariableDeclaration) String() string {
 	var console bytes.Buffer
 
-	console.WriteString(letStatement.TokenLiteral() + " ")
-	console.WriteString(letStatement.Name.String())
+	console.WriteString(variableDeclaration.TokenLiteral() + " ")
+	console.WriteString(variableDeclaration.Name.String())
 	console.WriteString(" = ")
 
-	if letStatement.Value != nil {
-		console.WriteString(letStatement.Value.String())
+	if variableDeclaration.Value != nil {
+		console.WriteString(variableDeclaration.Value.String())
 	}
 
 	console.WriteString(";")
@@ -88,14 +90,14 @@ func (rs *ReturnStatement) String() string {
 	return out.String()
 }
 
-type ESSSSSSSSS struct {
+type StatementFromExpression struct {
 	Token      token.Token // the first token of the expression
 	Expression Expression
 }
 
-func (es *ESSSSSSSSS) statementNode()       {}
-func (es *ESSSSSSSSS) TokenLiteral() string { return es.Token.Literal }
-func (es *ESSSSSSSSS) String() string {
+func (es *StatementFromExpression) statementNode()       {}
+func (es *StatementFromExpression) TokenLiteral() string { return es.Token.Literal }
+func (es *StatementFromExpression) String() string {
 	if es.Expression != nil {
 		return es.Expression.String()
 	}
