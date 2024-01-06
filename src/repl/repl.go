@@ -4,10 +4,10 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"m/eval"
-	"m/lexer"
-	"m/object"
-	"m/parser"
+	"src/eval"
+	"src/lexer"
+	"src/object"
+	"src/parser"
 )
 
 const PROMPT = ">>> "

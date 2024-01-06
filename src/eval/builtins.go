@@ -2,7 +2,7 @@ package eval
 
 import (
 	"fmt"
-	"m/object"
+	"src/object"
 )
 
 var builtins = map[string]*object.B{

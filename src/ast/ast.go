@@ -2,7 +2,7 @@ package ast
 
 import (
 	"bytes"
-	"m/token"
+	"src/token"
 	"strings"
 )
 

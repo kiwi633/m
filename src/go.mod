@@ -1,3 +1,3 @@
-module m
+module src
 
 go 1.21

@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"m/repl"
 	"os"
 	"runtime"
+	"src/repl"
 )
 
 func main() {
