@@ -1,7 +1,7 @@
 package ast
 
 import (
-	"m/token"
+	"src/token"
 	"testing"
 )
 

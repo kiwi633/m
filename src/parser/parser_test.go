@@ -2,8 +2,8 @@ package parser
 
 import (
 	"fmt"
-	"m/ast"
-	"m/lexer"
+	"src/ast"
+	"src/lexer"
 	"testing"
 )
 
